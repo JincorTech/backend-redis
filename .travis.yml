@@ -1,0 +1,6 @@
+udo: required
+
+services:
+  - docker
+script:
+  - ./build.sh $(git rev-parse --short HEAD)
