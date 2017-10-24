@@ -2,5 +2,6 @@ udo: required
 
 services:
   - docker
-script:
+scripti:
+  - chmod ugo+x ./build.sh
   - ./build.sh $(git rev-parse --short HEAD)
