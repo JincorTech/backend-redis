@@ -1,4 +1,5 @@
-udo: required
+language: bash
+sudo: required
 services:
 - docker
 scripti:
