@@ -5,7 +5,8 @@ services:
 script:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 - chmod ugo+x ./build.sh
-- ./build.sh $(git rev-parse --short HEAD)
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ];  then echo "production"; elif ["$TRAVIS_BRANCH" == "develop"]; then echo "stage"; else echo "dev-"$TRAVIS_BRANCH ; fi`
+- ./build.sh $TAG
 
 env:
   global:
